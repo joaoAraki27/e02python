@@ -36,14 +36,21 @@ class Livro:
 
 
 class Usuario:
-    def __init__(self, nome, matricula):
+    def __init__(self, nome, matricula, limite ):
         if not nome:
             raise ValueError("Nome e obrigatorio")
         self.nome = nome
         self.matricula = matricula
+        self.limite = 3
+
+        if self.limite == 0:
+            print("atingiu limite")
+            return False
 
     def __str__(self):
-        return f"{self.nome} ({self.matricula})"
+        return f"self.limite = limite + 1 {self.nome} ({self.matricula})" 
+    
+    
 
 
 class emprestimo:
@@ -88,7 +95,7 @@ livro = Livro("Dom Casmurro", "Machado de Assis", 1899)
 print(livro.título)
 print(livro.ano)
 
-ana = Usuario("Ana Souza", "2026001")
+ana = Usuario("Ana Souza", "2026001",3)
 emp = emprestimo(livro, ana, "20/08/2026")
 
 print(emp)
