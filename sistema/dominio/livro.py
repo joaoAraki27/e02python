@@ -24,6 +24,9 @@ class Livro:
         else:
             return False
 
+    def __str__(self):
+        return self.descricao()
+
     @property
     def ano(self):
         return self._ano
